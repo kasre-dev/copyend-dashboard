@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copyend | Observation Node</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Dynamic Background Layer -->
+    <div id="sky-background" class="sky-bg">
+      <div id="celestial-body" class="celestial"></div>
+      <div class="clouds-layer"></div>
+      <!-- Weather Effects Overlay -->
+      <div id="weather-effects" class="weather-overlay"></div>
+    </div>
+
+    <!-- Main Application UI (Glassmorphism) -->
+    <main class="dashboard-container">
+      
+      <!-- HEADER -->
+      <header class="glass-panel top-bar">
+        <div class="branding">
+          <h1>OBSERVATION_NODE</h1>
+          <span class="status-indicator"></span>
+          <span class="status-text">SYSTEM ONLINE</span>
+        </div>
+        <div class="clock-widget">
+          <div id="current-time" class="time-display">00:00:00</div>
+          <div id="current-date" class="date-display">Carregando...</div>
+        </div>
+      </header>
+
+      <!-- GRID LAYOUT -->
+      <div class="bento-grid">
+        
+        <!-- COLUMN 1: FEEDS (RSS) -->
+        <section class="glass-panel grid-col-span-2 bento-card feed-section">
+          <div class="card-header">
+            <h2>INTELLIGENCE FEED</h2>
+            <div class="tabs">
+              <button class="active">ALL</button>
+              <button>COPYEND</button>
+              <button>AODEV</button>
+              <button>OLARIENSE</button>
+            </div>
+          </div>
+          <div id="rss-feed-container" class="feed-list scrollable">
+            <!-- Feed Items via JS -->
+            <div class="feed-item placeholder">Carregando telemetria de feeds...</div>
+          </div>
+        </section>
+
+        <!-- COLUMN 2: WIDGETS -->
+        <div class="widgets-column">
+          
+          <!-- WEATHER & MOON PHASE -->
+          <section class="glass-panel bento-card weather-card">
+            <div class="card-header">
+              <h2>METEOROLOGY</h2>
+            </div>
+            <div class="weather-content">
+              <div class="weather-main">
+                <span id="temp-display" class="temp">24°C</span>
+                <span id="weather-condition" class="condition">Parcialmente Nublado</span>
+              </div>
+              <div class="weather-metrics">
+                <div class="metric"><span class="label">WIND</span><span class="val">12km/h</span></div>
+                <div class="metric"><span class="label">UV</span><span class="val warning">ALTO</span></div>
+                <div class="metric"><span class="label">MOON</span><span class="val">Minguante</span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CALENDAR / GOOGLE CALENDAR SYNC -->
+          <section class="glass-panel bento-card calendar-card">
+            <div class="card-header">
+              <h2>SCHEDULE</h2>
+              <button class="icon-btn">Sync</button>
+            </div>
+            <div class="calendar-content scrollable">
+              <div class="event-item soon">
+                <div class="time">14:00</div>
+                <div class="desc">Reunião de Alinhamento - Copyend</div>
+              </div>
+              <div class="event-item">
+                <div class="time">16:30</div>
+                <div class="desc">Revisão Laudos - RetificaPro</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- MEDIA PLAYER -->
+          <section class="glass-panel bento-card media-card">
+            <div class="card-header">
+              <h2>FREQUENCY</h2>
+              <select class="media-selector">
+                <option>Lofi Radio</option>
+                <option>Spotify Playlist</option>
+                <option>Podcast Curation</option>
+              </select>
+            </div>
+            <div class="player-container">
+              <!-- Placeholder for Spotify/Radio Embed -->
+              <div class="audio-visualizer">
+                <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+              </div>
+              <div class="controls">
+                <button>⏮</button>
+                <button class="play">▶</button>
+                <button>⏭</button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
